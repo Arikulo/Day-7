@@ -1,5 +1,5 @@
 x=[['32T3K',765],['T55J5',684],['KK677',28],['KTJJT',220],['QQQJA',483]]
-
+amount = len(x)
 VK= []
 IVK = []
 FH = []
@@ -60,5 +60,14 @@ for place, data in enumerate(x):
 
 for place,hand_type in enumerate(types):
   types[place] = sort_by_value(hand_type)
-  print(names[place],':',types[place])
+  #print(names[place],':',types[place])
 
+
+full_list=[i for i in list(types) if i != []]
+end=[a for b in full_list for a in b]
+print(end)
+total=0
+for i in range(1,amount+1):
+  total+=end[i-1][1]*(amount+1-i)
+
+print(total)
